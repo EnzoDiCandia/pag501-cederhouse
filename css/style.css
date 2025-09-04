@@ -15,9 +15,7 @@ header {
     background: linear-gradient(135deg,
             #1e1e2f,
             #2c2c44);
-    /* tonos oscuros, mágicos */
     border-bottom: 4px solid #aea21d;
-    /* detalle dorado medieval */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
@@ -28,6 +26,9 @@ header {
     max-width: 1200px;
     margin: auto;
     padding: 0.8rem 2rem;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .navbarul {
@@ -41,10 +42,8 @@ header {
 
 .navbarul li a {
     font-family: "MedievalSharp", cursive;
-    /* tipografía fantástica */
     font-size: 1.2rem;
     color: #f5f5dc;
-    /* tono pergamino */
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
@@ -56,12 +55,9 @@ header {
     left: 0;
     bottom: -4px;
     width: 0;
-    /** ancho de la linea **/
     height: 2px;
-    /** alto de la linea **/
     background: #aea21d;
     transition: width 0.3s ease;
-    /** efecto que va creando la linea **/
 }
 
 .navbarul li a:hover {
