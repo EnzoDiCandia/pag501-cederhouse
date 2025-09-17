@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body:not(.contactoBody) { /* aclaro que solo en contacto body no aplica el color */
+    background: $colorfondo;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+}

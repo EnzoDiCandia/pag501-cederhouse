@@ -1,0 +1,30 @@
+@mixin flex($wrap,$direction,$justify,$item,$gap){
+    display: flex;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $item;
+    gap: $gap;
+}
+
+
+@mixin grid($col,$row,$justify,$align){
+    display: grid;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin titulo($size,$margin,$align){
+    font-family: "MedievalSharp", cursive;
+    font-size: $size;
+    margin: $margin;
+    text-align: $align;
+}
+
+@mixin cardrelato($margin,$width,$margbot){
+    margin: $margin;
+    max-width: $width;
+    margin-bottom: $margbot;
+}

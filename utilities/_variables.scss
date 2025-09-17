@@ -1,0 +1,9 @@
+
+/* footer y navbar */
+$backnavyfoot: map-get($coloresnavyfoot ,color3);
+$coltextnavyfoot: map-get($coloresnavyfoot ,color1);
+$deconavyfoot: map-get($coloresnavyfoot ,color2); 
+
+
+/* color fondo body */
+$colorfondo:linear-gradient(135deg, #3a2f2f, #877253, #f5f0e1);

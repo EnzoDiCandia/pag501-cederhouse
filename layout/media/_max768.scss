@@ -1,0 +1,92 @@
+/**-------------------- configuraciones index ------------------**/
+
+
+
+@media (max-width: 768px) {
+    .divTextoVideo {
+        flex-direction: column;
+    }
+
+    .divContenido h1 {
+        font-size: 1.5rem;
+    }
+
+    .divContenido p {
+        font-size: 1.2rem;
+        margin-bottom: 15%;
+    }
+}
+
+
+/**------------------------------------ configuraciones caracteristicas ------------------**/
+
+
+@media (max-width: 768px) {
+    .caractTituloDiv {
+        max-width: 80%;
+        padding: 15px;
+    }
+
+    .caractTituloDiv h1 {
+        font-size: 1.6rem;
+    }
+
+    .caractSubtDiv h2 {
+        font-size: 1.5rem;
+    }
+
+    .caractElementosDiv ul li p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/**---------------------------- configuraciones relatos ------------------**/
+
+
+
+@media (max-width: 768px) {
+    .relatosTitulo {
+        font-size: 3rem;
+        max-width: 85%;
+    }
+
+    .relatoCard {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .relatoPar .relatoCard {
+        flex-direction: column;
+    }
+
+    .relatoCardImg {
+        max-width: 100%;
+        margin-top: 0.9375rem;
+    }
+}
+
+
+/**------ configuraciones navbar ------------------**/
+
+@media (max-width: 768px) {
+    .navbarul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/**-------------------- configuraciones footer ------------------**/
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.3rem;
+    }
+
+    .footerder .logo-footer {
+        max-height: 50px;
+    }
+}

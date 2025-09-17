@@ -1,0 +1,36 @@
+/* utilities */
+
+@import "../utilities/maps";
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+
+
+/* base */
+
+@import "../base/reset";
+@import "../base/tipografias";
+
+/* layout */
+
+@import "../layout/bodyindex";
+@import "../layout/caracteristicas";
+@import "../layout/relatos";
+@import "../layout/personajes";
+
+/* componentes */
+
+@import "../components/navbar";
+@import "../components/footer";
+@import "../components/cardcaracteristicas";
+@import "../components/cardrelatos";
+@import "../components/cardpersonajes";
+
+
+/* media */ 
+
+@import "../layout/media/max1024";
+@import "../layout/media/max900";
+@import "../layout/media/max768";
+@import "../layout/media/max600";
+@import "../layout/media/max480";

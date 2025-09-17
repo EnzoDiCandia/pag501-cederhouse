@@ -1,835 +1,568 @@
-/* TIPOGRAFIAS */
+/* utilities */
+/* footer y navbar */
+/* color fondo body */
+/* base */
 @import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap");
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/**-------------------------------------------------------------------------------------- configuraciones para la NAVBAR */
-header {
-    background: linear-gradient(135deg,
-            #1e1e2f,
-            #2c2c44);
-    border-bottom: 4px solid #aea21d;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+body:not(.contactoBody) { /* aclaro que solo en contacto body no aplica el color */
+  background: linear-gradient(135deg, #3a2f2f, #877253, #f5f0e1);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
 }
 
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0.8rem 2rem;
-    padding: 0.8rem 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.navbarul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-.navbarul li a {
-    font-family: "MedievalSharp", cursive;
-    font-size: 1.2rem;
-    color: #f5f5dc;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.navbarul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: #aea21d;
-    transition: width 0.3s ease;
-}
-
-.navbarul li a:hover {
-    color: #aea21d;
-}
-
-.navbarul li a:hover::after {
-    width: 100%;
-}
-
-/**------------------------------------------------------------------------------------------------ configuraciones para el FOOTER */
-
-footer {
-    background: linear-gradient(135deg, #2c2c44, #1e1e2f);
-    border-top: 4px solid #aea21d;
-    color: #f5f5dc;
-    padding: 1.5rem 2rem;
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.footerizq p {
-    margin: 0.2rem 0;
-    font-size: 1.5rem;
-    letter-spacing: 0.0625rem;
-}
-
-.footerder .logo-footer {
-    max-height: 4.5rem;
-    transition: transform 0.3s ease;
-}
-
-.footerder .logo-footer:hover {
-    transform: scale(1.2) rotate(-3deg);
-    /* agranda y gira el logo */
-}
-
-/**--------------------------------------------------------------------------formato body gral**/
-
-body:not(.contactoBody) {
-    background: linear-gradient(135deg, #3a2f2f, #877253, #f5f0e1);
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: "Montserrat", sans-serif;
-}
-
-/**------------------------------------------------------------------------------------------------ configuraciones para INDEX */
-
+/* layout */
 .divIndex {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-
 .divIndex img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.7);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7);
 }
-
-.divContenido {
-    width: 80%;
-    margin: auto;
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    margin-top: 3rem;
-    text-align: center;
+.divIndex .divContenido {
+  width: 80%;
+  margin: auto;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 3rem;
 }
-
-.divContenido h1 {
-    font-family: "MedievalSharp", cursive;
-    font-size: 3rem;
-    margin: 2rem auto;
-    margin-top: 0.5rem;
-    color: #000;
-    background-color: #ffffffa0;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
+.divIndex .divContenido h1 {
+  font-family: "MedievalSharp", cursive;
+  font-size: 3rem;
+  margin: 2rem auto;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.6274509804);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
 }
-
-.divContenido h1::first-letter {
-    font-size: 3.2rem;
-    color: #aea21d;
-    margin-right: 0.3rem;
-    line-height: 1;
-    font-family: "UnifrakturCook", cursive;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+.divIndex .divContenido h1::first-letter {
+  font-size: 3.2rem;
+  color: #aea21d;
+  margin-right: 0.3rem;
+  line-height: 1;
+  font-family: "UnifrakturCook", cursive;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
-
-.divTextoVideo {
-    max-width: 50rem;
-    margin-top: 1.25rem;
+.divIndex .divTextoVideo {
+  max-width: 50rem;
+  margin-top: 1.25rem;
 }
-
-.divTextoVideo p {
-    background-color: #00000061;
-    border-radius: 15px;
-    font-weight: 700;
-    font-size: 2rem;
+.divIndex .divTextoVideo p {
+  background-color: rgba(0, 0, 0, 0.3803921569);
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 2rem;
 }
-
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    height: 0;
-    overflow: hidden;
-    margin-top: 20px;
+.divIndex .divTextoVideo .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  margin-top: 20px;
 }
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+.divIndex .divTextoVideo .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
-
-/**------------------------------------------------------------------------------------------------ configuraciones para CARACTERISTICAS */
 
 .caractTituloDiv {
-    font-family: "MedievalSharp", cursive;
-    font-size: 2rem;
-    margin: 2rem auto;
-    text-align: center;
-    border-radius: 1.875rem;
-    max-width: 80%;
-    padding: 1.25rem;
+  border-radius: 1.875rem;
+  max-width: 80%;
+  padding: 1.25rem;
+  margin: auto;
 }
-
 .caractTituloDiv h1 {
-    color: #fff;
-    text-shadow: 0 0 0.3125rem #ffd700, 0 0 0.625rem #ffd700, 0 0 1.25rem #ffae00,
-        0 0 2.5rem #ffae00;
-    margin: auto;
-    font-family: "MedievalSharp", cursive;
-    font-size: 3rem;
-    text-align: center;
-    margin: 2rem 0;
-    color: #000000;
+  font-family: "MedievalSharp", cursive;
+  font-size: 3rem;
+  margin: 2rem auto;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 0.3125rem #ffd700, 0 0 0.625rem #ffd700, 0 0 1.25rem #ffae00, 0 0 2.5rem #ffae00;
+  color: #000000;
+  animation: glow 1000ms infinite alternate;
 }
 
 .caractSubtDiv h2 {
-    font-family: "MedievalSharp", cursive;
-    background-color: #00000048;
-    width: 35%;
-    margin: auto;
-    padding: 1rem;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #ffffff;
-    text-shadow: 0 0 2.5rem #e9ebed;
+  font-family: "MedievalSharp", cursive;
+  font-size: 2.5rem;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2823529412);
+  width: 35%;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 0 0 2.5rem #e9ebed;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 0.3rem #ffd700, 0 0 0.6rem #ffae00, 0 0 1.2rem #ffae00;
+  }
+  100% {
+    text-shadow: 0 0 1rem #ffd700, 0 0 2rem #ffae00, 0 0 4rem #ffae00;
+  }
+}
+section .relatosTitulo {
+  font-family: "MedievalSharp", cursive;
+  font-size: 3rem;
+  margin: 2.5rem auto;
+  text-align: center;
+  background-color: #dcd0a8;
+  border-radius: 1.875rem;
+  max-width: 60%;
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem rgba(34, 34, 34, 0.8156862745);
+  padding: 1.25rem;
+}
+
+.personajesTitulo .personajesH1 {
+  font-family: "MedievalSharp", cursive;
+  font-size: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  font-family: "MedievalSharp", cursive;
+  background-color: #dcd0a8;
+  border-radius: 1.875rem;
+  max-width: 60%;
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem rgba(34, 34, 34, 0.8156862745);
+  padding: 1.25rem;
+}
+
+/* componentes */
+header {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c44);
+  border-bottom: 4px solid #aea21d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header .navbar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  max-width: 75rem;
+  margin: auto;
+  padding: 0.8rem 2rem;
+  padding: 0.8rem 2rem;
+}
+header .navbar .navbarul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header .navbar .navbarul li a {
+  font-family: "MedievalSharp", cursive;
+  font-size: 1.2rem;
+  color: #f5f5dc;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+header .navbar .navbarul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #aea21d;
+  transition: width 0.3s ease;
+}
+header .navbar .navbarul li a:hover {
+  color: #aea21d;
+}
+header .navbar .navbarul li a:hover::after {
+  width: 100%;
+}
+
+footer {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c44);
+  border-top: 4px solid #aea21d;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  color: #f5f5dc;
+  padding: 1.5rem 2rem;
+  font-family: "Merriweather", serif;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+footer .footerizq p {
+  margin: 0.2rem 3rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.0625rem;
+}
+footer .footerder .logo-footer {
+  max-height: 6rem;
+  transition: transform 0.3s ease;
+}
+footer .footerder .logo-footer:hover {
+  transform: scale(1.2) rotate(-3deg);
+  /* agranda y gira el logo */
 }
 
 .caractContenedor {
-    display: flex;
-    margin: 5%;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #1a1a1a;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    gap: 2rem;
-    transition: all 0.3s ease;
-    filter: grayscale(100%);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin: 5%;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
 }
-
 .caractContenedor:hover {
-    filter: none;
+  filter: none;
 }
-
 .caractContenedor:nth-child(even) {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
-
-.caractElementosDiv {
-    flex: 1;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.8rem;
-    color: #dfdddd;
-    font-weight: 700;
+.caractContenedor .caractImg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
-
-.caractElementosDiv ul {
-    padding-left: 1.5rem;
+.caractContenedor .caractImg img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
-
-.caractElementosDiv li {
-    margin-bottom: 1rem;
+.caractContenedor .caractImg img:hover {
+  filter: none;
+  transform: scale(1.4);
 }
-
-.caractImg {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: contain;
-    transition: transform 0.3s ease, filter 0.3s ease;
+.caractContenedor .caractElementosDiv {
+  flex: 1;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: #dfdddd;
+  font-weight: 700;
 }
-
-.caractImg img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 1rem;
-    transition: transform 0.3s ease, filter 0.3s ease;
+.caractContenedor .caractElementosDiv ul {
+  padding-left: 1.5rem;
 }
-
-.caractImg img:hover {
-    filter: none;
-    transform: scale(1.4);
-}
-
-/*------------------------------------------------------------------------------------ configuraciones para RELATOS */
-
-.relatosTitulo {
-    font-family: "MedievalSharp", cursive;
-    font-size: 3rem;
-    margin: 2.5rem auto;
-    text-align: center;
-    background-color: #dcd0a8;
-    border-radius: 1.875rem;
-    max-width: 60%;
-    box-shadow: 0.3125rem 0.3125rem 0.3125rem #222222d0;
-    padding: 1.25rem;
-}
-
-.relatoImpar,
-.relatoPar {
-    margin: 1.25rem auto;
-    max-width: 75rem;
-    margin-bottom: 3remS;
-}
-
-.relatoCard {
-    background-color: #5c56cc;
-    border-radius: 0.625rem;
-    box-shadow: 0.625rem 0.625rem 0.625rem #222222d0;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 1.25rem;
-    width: 100%;
-    box-sizing: border-box;
-    filter: grayscale(100%);
-    transition: all 0.4s ease;
-    transform-origin: center;
-    margin: auto;
-    /* centrar */
-}
-
-.relatoCard:hover {
-    filter: none;
-    transform: scale(1.05);
-}
-
-.relatoCardcontenido {
-    flex: 1;
-    filter: blur(5px);
-}
-
-.relatoCardcontenido:hover {
-    filter: none;
-}
-
-.relatoCardImg {
-    flex-shrink: 0;
-    max-width: 12.5rem;
-    max-height: 25rem;
-    overflow: hidden;
-}
-
-.relatoCardImg img {
-    width: 100%;
-    border-radius: 1.25rem;
-}
-
-.relatoPar .relatoCard {
-    flex-direction: row-reverse;
-}
-
-.relatoCardTitulo {
-    font-family: "MedievalSharp", cursive;
-    font-size: 3rem;
-    text-align: center;
-}
-
-.relatoCardAutor,
-.relatoCardTema,
-.relatoCardResenia {
-    font-family: "Montserrat", sans-serif;
+.caractContenedor .caractElementosDiv ul li {
+  margin-bottom: 1rem;
 }
 
 .relatosContainer {
-    display: grid;
-    grid-template-columns: 5fr;
-    gap: 1.25rem;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 5fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+.relatosContainer .relatoImpar, .relatosContainer .relatoPar {
+  margin: 1.25rem auto;
+  max-width: 75rem;
+  margin-bottom: 3rem;
+}
+.relatosContainer .relatoImpar .relatoCard, .relatosContainer .relatoPar .relatoCard {
+  background-color: #5c56cc;
+  border-radius: 0.625rem;
+  box-shadow: 0.625rem 0.625rem 0.625rem rgba(34, 34, 34, 0.8156862745);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+  transform-origin: center;
+  margin: auto;
+}
+.relatosContainer .relatoImpar .relatoCard:hover, .relatosContainer .relatoPar .relatoCard:hover {
+  filter: none;
+  transform: scale(1.25);
+}
+.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido, .relatosContainer .relatoPar .relatoCard .relatoCardcontenido {
+  flex: 1;
+  filter: blur(5px);
+  font-family: "Montserrat", sans-serif;
+}
+.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido:hover, .relatosContainer .relatoPar .relatoCard .relatoCardcontenido:hover {
+  filter: none;
+}
+.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido .relatoCardTitulo, .relatosContainer .relatoPar .relatoCard .relatoCardcontenido .relatoCardTitulo {
+  font-family: "MedievalSharp", cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+.relatosContainer .relatoImpar .relatoCard .relatoCardImg, .relatosContainer .relatoPar .relatoCard .relatoCardImg {
+  flex-shrink: 0;
+  max-width: 12.5rem;
+  max-height: 25rem;
+  overflow: hidden;
+}
+.relatosContainer .relatoImpar .relatoCard .relatoCardImg img, .relatosContainer .relatoPar .relatoCard .relatoCardImg img {
+  width: 100%;
+  border-radius: 1.25rem;
 }
 
-/*------------------------------------------------------------------ configuraciones para PERSONAJES */
-.personajesTitulo {
-    font-family: "MedievalSharp", cursive;
-    font-size: 2rem;
-    margin: 2rem auto;
-    text-align: center;
-    background-color: #dcd0a8;
-    border-radius: 1.875rem;
-    max-width: 60%;
-    box-shadow: 0.3125rem 0.3125rem 0.3125rem #222222d0;
-    padding: 1.25rem;
+.relatoPar .relatoCard {
+  flex-direction: row-reverse;
 }
 
 .personajesDivContenedor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin: 2rem auto;
-    max-width: 1100px;
-    padding: 2rem;
-    background: #1a1a1a;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    color: #f5f5f5;
-    font-family: "Georgia", serif;
-    filter: blur(10px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1100px;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: #f5f5f5;
+  font-family: "Georgia", serif;
+  filter: blur(10px);
 }
-
 .personajesDivContenedor:hover {
-    filter: none;
+  filter: none;
+}
+.personajesDivContenedor .personajesDivTexto p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+.personajesDivContenedor .personajesDivTexto h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d4af37;
+}
+.personajesDivContenedor .personajesDivImg img {
+  width: 100%;
+  border-radius: 1rem;
+  transition: transform 0.4s; /** maneja la duracion del efecto **/
+}
+.personajesDivContenedor .personajesDivImg img:hover {
+  transform: scale(1.1); /** efecto de zoom**/
 }
 
-.personajesDivImg img {
-    width: 100%;
-    border-radius: 1rem;
-    transition: transform 0.4s;
-    /** maneja la duracion del efecto **/
-}
-
-.personajesDivImg img:hover {
-    transform: scale(1.1);
-    /** efecto de zoom**/
-}
-
-.personajesDivTexto h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #d4af37;
-}
-
-.personajesDivTexto p {
+/* media */
+/**-------------------------------------------- configuraciones index ------------------**/
+@media (max-width: 1024px) {
+  .divIndex .divContenido {
+    margin-top: 1rem;
+  }
+  .divIndex .divContenido h1 {
     font-size: 1.5rem;
-    line-height: 1.6;
-    color: #e0e0e0;
+    margin-bottom: 0;
+  }
+  .divIndex .divTextoVideo p {
+    font-size: 1.5rem;
+  }
 }
-
-/*----------------------------------------------------------------------------------------------------- configuraciones para SOBRENOS */
-.h1Sobrenos {
-    font-family: "Merriweather", serif;
-    text-align: center;
-    border-radius: 1rem;
-    width: 40%;
-    font-size: 2.5rem;
-    margin: 2rem auto;
+/**-------------------------------------- configuraciones caracteristicas ------------------**/
+@media (max-width: 1024px) {
+  .caractTituloDiv {
     max-width: 80%;
-    padding: 0.5rem 1rem;
-    color: #2c3e50;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  .caractTituloDiv h1 {
+    font-size: 1.8rem;
+  }
+  .caractSubtDiv h2 {
+    font-size: 1.7rem;
+  }
+  .caractElementosDiv ul li p {
+    font-size: 1.5rem;
+  }
 }
-
-.div501 {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    background-color: #f9f5f0;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    max-width: 1200px;
-    margin: 2rem auto;
-}
-
-.div501Texto {
-    flex: 1;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-.div501Img {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.div501Img img {
-    max-width: 100%;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.div501Img img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
-}
-
-.divMapSobrenos {
-    max-width: 1200px;
-    margin: 2rem auto;
-    text-align: center;
-}
-
-.divMapSobrenos h2 {
-    color: #2c3e50;
-    background-color: #f5f5f5;
-    margin: auto;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-    width: 30%;
-    padding: 0.35rem;
-}
-
-.divMapSobrenos iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.divMapSobrenos iframe:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2); 
-}
-
-/*------------------------------------------------------------------------------------------------Configuraciones Contacto  */
-
-.contactoBody {
-    font-family: "Inter", sans-serif;
-    background-color: #5f7c91;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-}
-
-.contactoContainer {
-    background: #ffffff;
-    padding: 2.5rem;
-    margin: 2rem;
-    max-width: 800px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-.contactoTitulo {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #0077cc;
-}
-
-.contactoDescripcion {
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-.contactoSubtitulo {
-    font-size: 1.4rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #444;
-    border-left: 4px solid #0077cc;
-    padding-left: 0.6rem;
-}
-
-.contactoSkills,
-.contactoMedios {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem 0;
-}
-
-.contactoSkills li,
-.contactoMedios li {
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.contactoSkills li::before {
-    content: "✔";
-    margin-right: 0.6rem;
-    color: #0077cc;
-    font-weight: bold;
-}
-
-.contactoMedios li strong {
-    color: #222;
-    min-width: 90px;
-    display: inline-block;
-}
-
-.contactoMedios a {
-    color: #0077cc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contactoMedios a:hover {
-    color: #005fa3;
-    text-decoration: underline;
-}
-
-.contactoBoton {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.contactoBoton a {
-    display: inline-block;
-    background: #0077cc;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.contactoBoton a:hover {
-    background: #005fa3;
-}
-
-/**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**/
-
-/**------------------------------------------------------------------------------------------------ responsive ------------------**/
-
-/**------------------------------------------------------------------------------------------------ configuraciones navbar ------------------**/
-
-@media (max-width: 768px) {
-    .navbarul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-}
-
-/**------------------------------------------------------------------------------------------------ configuraciones footer ------------------**/
-
-@media (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.3rem;
-    }
-
-    .footerder .logo-footer {
-        max-height: 50px;
-    }
-}
-
-/**------------------------------------------------------------------------------------------------ configuraciones index ------------------**/
-
-@media (max-width: 1024px) {
-    .divContenido{
-        margin-top: 1rem;
-    }
-    
-    .divContenido h1 {
-        font-size: 1.5rem;
-        margin-bottom: 0;
-    }
-
-    .divContenido p {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .divTextoVideo {
-        flex-direction: column;
-    }
-
-    .divContenido h1 {
-        font-size: 1.5rem;
-    }
-
-    .divContenido p {
-        font-size: 1.2rem;
-        margin-bottom: 15%;
-    }
-}
-
-@media (max-width: 480px) {
-    .divContenido h1 {
-        font-size: 1.5rem;
-    }
-
-    .divContenido h1::first-letter {
-        font-size: 2.8rem;
-        margin-right: 0.5rem;
-    }
-
-    .divContenido p {
-        font-size: 0.9rem;
-    }
-}
-
-/**------------------------------------------------------------------------------------------------ configuraciones caracteristicas ------------------**/
-@media (max-width: 1024px) {
-    .caractTituloDiv {
-        max-width: 80%;
-        padding: 15px;
-    }
-
-    .caractTituloDiv h1 {
-        font-size: 1.8rem;
-    }
-
-    .caractSubtDiv h2 {
-        font-size: 1.7rem;
-    }
-
-    .caractElementosDiv ul li p {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .caractTituloDiv {
-        max-width: 80%;
-        padding: 15px;
-    }
-
-    .caractTituloDiv h1 {
-        font-size: 1.6rem;
-    }
-
-    .caractSubtDiv h2 {
-        font-size: 1.5rem;
-    }
-
-    .caractElementosDiv ul li p {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .caractContenedor {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .caractElementosDiv ul li p {
-        font-size: 0.8rem;
-    }
-
-    @media (max-width: 768px) {
-        .caractContenedor {
-            flex-direction: column;
-            gap: 1.1rem;
-        }
-
-        .caractElementosDiv,
-        .caractImg {
-            min-width: 100%;
-        }
-
-        .caractElementosDiv ul li p {
-            font-size: 0.9rem;
-        }
-    }
-}
-
-/**------------------------------------------------------------------------------------------------ configuraciones relatos ------------------**/
-
+/**----------------------------------- configuraciones relatos ------------------**/
 @media (min-width: 1024px) {
-    .relatosContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 2rem;
-        width: 100%;
-    }
-
-    .relatoImpar {
-        grid-column: 1 / span 2;
-    }
-
-    .relatoPar {
-        grid-column: 2 / span 2;
-    }
+  .relatosContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+  .relatoImpar, .relatoPar {
+    grid-column: 1/span 2;
+  }
+  .relatoPar {
+    grid-column: 2/span 2;
+  }
 }
-
-@media (max-width: 767px) {
-    .relatosTitulo {
-        font-size: 3rem;
-        max-width: 85%;
-    }
-
-    .relatoCard {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .relatoPar .relatoCard {
-        flex-direction: column;
-    }
-
-    .relatoCardImg {
-        max-width: 100%;
-        margin-top: 0.9375rem;
-    }
-}
-
-/**------------------------------------------------------------------------------------------------ configuraciones Personajes ------------------**/
-
+/**---------------------------------- configuraciones Personajes ------------------**/
 @media (max-width: 900px) {
-    .personajesDivContenedor {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .personajesDivTexto h2 {
-        font-size: 1.4rem;
-    }
-
-    .personajesDivTexto p {
-        font-size: 1rem;
-    }
+  .personajesDivContenedor {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .personajesDivTexto h2 {
+    font-size: 1.4rem;
+  }
+  .personajesDivTexto p {
+    font-size: 1rem;
+  }
 }
-
-/**------------------------------------------------------------------------------------------------ configuraciones sobrenos ------------------**/
-
+/**-------------------- configuraciones index ------------------**/
+@media (max-width: 768px) {
+  .divTextoVideo {
+    flex-direction: column;
+  }
+  .divContenido h1 {
+    font-size: 1.5rem;
+  }
+  .divContenido p {
+    font-size: 1.2rem;
+    margin-bottom: 15%;
+  }
+}
+/**------------------------------------ configuraciones caracteristicas ------------------**/
+@media (max-width: 768px) {
+  .caractTituloDiv {
+    max-width: 80%;
+    padding: 15px;
+  }
+  .caractTituloDiv h1 {
+    font-size: 1.6rem;
+  }
+  .caractSubtDiv h2 {
+    font-size: 1.5rem;
+  }
+  .caractElementosDiv ul li p {
+    font-size: 1.2rem;
+  }
+}
+/**---------------------------- configuraciones relatos ------------------**/
+@media (max-width: 768px) {
+  .relatosTitulo {
+    font-size: 3rem;
+    max-width: 85%;
+  }
+  .relatoCard {
+    flex-direction: column;
+    text-align: center;
+  }
+  .relatoPar .relatoCard {
+    flex-direction: column;
+  }
+  .relatoCardImg {
+    max-width: 100%;
+    margin-top: 0.9375rem;
+  }
+}
+/**------ configuraciones navbar ------------------**/
+@media (max-width: 768px) {
+  .navbarul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+/**-------------------- configuraciones footer ------------------**/
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.3rem;
+  }
+  .footerder .logo-footer {
+    max-height: 50px;
+  }
+}
+/**---------------------------------------- configuraciones sobrenos ------------------**/
 @media (max-width: 600px) {
-    .contactoContainer {
-        padding: 1.5rem;
-    }
-
-    .contactoTitulo {
-        font-size: 1.8rem;
-    }
-
-    .contactoDescripcion {
-        font-size: 1rem;
-    }
+  .contactoContainer {
+    padding: 1.5rem;
+  }
+  .contactoTitulo {
+    font-size: 1.8rem;
+  }
+  .contactoDescripcion {
+    font-size: 1rem;
+  }
 }
+/**--------------------- configuraciones index ------------------**/
+@media (max-width: 480px) {
+  .divContenido h1 {
+    font-size: 1.5rem;
+  }
+  .divContenido h1::first-letter {
+    font-size: 2.8rem;
+    margin-right: 0.5rem;
+  }
+  .divContenido p {
+    font-size: 0.9rem;
+  }
+}
+/**------------------------------- configuraciones caracteristicas ------------------**/
+@media (max-width: 480px) {
+  .caractContenedor {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .caractElementosDiv ul li p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px) and (max-width: 768px) {
+  .caractContenedor {
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .caractElementosDiv,
+  .caractImg {
+    min-width: 100%;
+  }
+  .caractElementosDiv ul li p {
+    font-size: 0.9rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

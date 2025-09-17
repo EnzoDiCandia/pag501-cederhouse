@@ -1,0 +1,50 @@
+
+.caractContenedor{
+    @include flex(wrap,row,space-between,center,2rem);
+    margin: 5%;
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    &:hover{
+        filter: none;
+    }
+    &:nth-child(even) {
+    flex-direction: row-reverse;
+    }
+
+    .caractImg{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: contain;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        img{
+            width: 100%;
+            max-width: 400px;
+            border-radius: 1rem;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            &:hover{
+                filter: none;
+                transform: scale(1.4);
+            }
+        }
+    }
+
+    .caractElementosDiv{
+        flex: 1;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.8rem;
+        color: #dfdddd;
+        font-weight: 700;
+        ul{
+            padding-left: 1.5rem;
+            li{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

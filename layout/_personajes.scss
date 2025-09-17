@@ -1,0 +1,11 @@
+.personajesTitulo{
+    .personajesH1{
+        @include titulo(2rem,2rem auto,center);
+        font-family: "MedievalSharp", cursive;
+        background-color: #dcd0a8;
+        border-radius: 1.875rem;
+        max-width: 60%;
+        box-shadow: 0.3125rem 0.3125rem 0.3125rem #222222d0;
+        padding: 1.25rem;
+    }
+}

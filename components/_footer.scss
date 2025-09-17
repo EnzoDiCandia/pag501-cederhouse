@@ -1,0 +1,27 @@
+footer{
+    background: map-get($coloresnavyfoot,color3);
+    border-top: 4px solid map-get($coloresnavyfoot,color2);
+    @include flex(wrap,row,space-between,center,0px);
+    color: map-get($coloresnavyfoot,color1);
+    padding: 1.5rem 2rem;
+    font-family: "Merriweather", serif;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+
+    .footerizq{
+        p{
+            margin: 0.2rem 3rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.0625rem;
+        }
+    }
+    .footerder{
+        .logo-footer{
+            max-height: 6rem;
+            transition: transform 0.3s ease;
+            &:hover{
+                transform: scale(1.2) rotate(-3deg);
+                /* agranda y gira el logo */
+            }
+        }
+    }
+}
