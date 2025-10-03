@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* utilities */
 /* footer y navbar */
 /* color fondo body */
@@ -20,40 +21,57 @@ body:not(.contactoBody) { /* aclaro que solo en contacto body no aplica el color
 }
 
 /* layout */
+.logo-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease forwards 1s;
+}
+.logo-splash img {
+  height: 500px;
+  width: auto;
+  animation: splashZoom 1.5s ease-in-out forwards;
+}
+
 .divIndex {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   overflow: hidden;
 }
 .divIndex img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
   filter: brightness(0.7);
 }
 .divIndex .divContenido {
   width: 80%;
-  margin: auto;
+  margin: 3rem auto;
   position: absolute;
   inset: 0;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 0rem;
   color: #fff;
   text-align: center;
-  margin-top: 3rem;
 }
 .divIndex .divContenido h1 {
   font-family: "MedievalSharp", cursive;
   font-size: 3rem;
   margin: 2rem auto;
   text-align: center;
-  margin-top: 0.5rem;
   color: #000;
   background-color: rgba(255, 255, 255, 0.6274509804);
   border-radius: 20px;
@@ -67,98 +85,178 @@ body:not(.contactoBody) { /* aclaro que solo en contacto body no aplica el color
   font-family: "UnifrakturCook", cursive;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
-.divIndex .divTextoVideo {
-  max-width: 50rem;
-  margin-top: 1.25rem;
+.divIndex .divContenido .divTextoVideo {
+  max-width: 80rem;
+  margin-top: 3rem;
 }
-.divIndex .divTextoVideo p {
+.divIndex .divContenido .divTextoVideo p {
   background-color: rgba(0, 0, 0, 0.3803921569);
   border-radius: 15px;
   font-weight: 700;
   font-size: 2rem;
 }
-.divIndex .divTextoVideo .video-container {
+.divIndex .divContenido .divTextoVideo .video-container {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
-  /* 16:9 */
   height: 0;
   overflow: hidden;
   margin-top: 20px;
 }
-.divIndex .divTextoVideo .video-container iframe {
+.divIndex .divContenido .divTextoVideo .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 100px;
   border: 0;
+  margin-bottom: 1.25rem;
 }
 
+@keyframes splashZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  350% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 .caractTituloDiv {
-  border-radius: 1.875rem;
   max-width: 80%;
-  padding: 1.25rem;
-  margin: auto;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
 }
 .caractTituloDiv h1 {
   font-family: "MedievalSharp", cursive;
-  font-size: 3rem;
-  margin: 2rem auto;
-  text-align: center;
-  color: #fff;
-  text-shadow: 0 0 0.3125rem #ffd700, 0 0 0.625rem #ffd700, 0 0 1.25rem #ffae00, 0 0 2.5rem #ffae00;
-  color: #000000;
-  animation: glow 1000ms infinite alternate;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: #000;
+  line-height: 1.2;
+  text-shadow: 0 0 0.5rem #ffd700, 0 0 1rem #ffae00;
+  animation: glow 1s infinite alternate;
 }
 
-.caractSubtDiv h2 {
-  font-family: "MedievalSharp", cursive;
-  font-size: 2.5rem;
-  margin: auto;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.2823529412);
-  width: 35%;
-  padding: 1rem;
+.caractSubtDiv {
   text-align: center;
   margin-bottom: 2rem;
-  color: #ffffff;
-  text-shadow: 0 0 2.5rem #e9ebed;
+}
+.caractSubtDiv h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 1rem #e9ebed;
 }
 
 @keyframes glow {
   0% {
-    text-shadow: 0 0 0.3rem #ffd700, 0 0 0.6rem #ffae00, 0 0 1.2rem #ffae00;
+    text-shadow: 0 0 0.5rem #ffd700, 0 0 1rem #ffae00;
   }
   100% {
-    text-shadow: 0 0 1rem #ffd700, 0 0 2rem #ffae00, 0 0 4rem #ffae00;
+    text-shadow: 0 0 1rem #ffd700, 0 0 2rem #ffae00;
   }
 }
-section .relatosTitulo {
+.relatosTitulo {
   font-family: "MedievalSharp", cursive;
+  max-width: 70%;
   font-size: 3rem;
   margin: 2.5rem auto;
   text-align: center;
-  background-color: #dcd0a8;
+  background: linear-gradient(135deg, #163a1a, #235b2a, #2f4f2f);
   border-radius: 1.875rem;
-  max-width: 60%;
-  box-shadow: 0.3125rem 0.3125rem 0.3125rem rgba(34, 34, 34, 0.8156862745);
-  padding: 1.25rem;
+  padding: 1.25rem 2rem;
+  color: #eaffd0;
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.3);
+  letter-spacing: 2px;
+  transition: transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fondo 3s ease-in-out infinite;
+  animation: brillofondo 2s ease-in-out infinite alternate, fondo 6s ease-in-out infinite;
 }
 
-.personajesTitulo .personajesH1 {
+/* 💫 Brillo del texto */
+@keyframes brillofondo {
+  0% {
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
+  }
+  50% {
+    text-shadow: 0 0 20px #b5ffa3, 0 0 40px #66ffbb, 0 0 60px #b2f889;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
+  }
+}
+/* 🌈 Movimiento del fondo (efecto mágico suave) */
+@keyframes fondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.personajesH1 {
   font-family: "MedievalSharp", cursive;
-  font-size: 2rem;
-  margin: 2rem auto;
+  font-size: 2.5rem;
+  margin: 3rem auto;
   text-align: center;
+  max-width: 55%;
   font-family: "MedievalSharp", cursive;
-  background-color: #dcd0a8;
-  border-radius: 1.875rem;
-  max-width: 60%;
-  box-shadow: 0.3125rem 0.3125rem 0.3125rem rgba(34, 34, 34, 0.8156862745);
-  padding: 1.25rem;
+  color: #ffd700;
+  background-color: #1a1a1a;
+  border: 2px solid #d4af37;
+  border-radius: 2rem;
+  padding: 1.2rem 2rem;
+  text-shadow: 0 0 10px #ffae00, 0 0 20px #ff6600, 0 0 30px #ff3300;
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
+  transition: transform 0.3s ease;
+  animation: glowPulse 1s ease-in-out infinite alternate;
 }
 
+/* 🔮 Animación del resplandor */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px #ffae00, 0 0 20px #ff6600, 0 0 30px #ff3300;
+    box-shadow: 0 0 25px #ff6600, 0 0 40px rgba(255, 255, 200, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ffd700, 0 0 60px #ff6600;
+    box-shadow: 0 0 40px #ffd700, 0 0 70px rgba(255, 255, 200, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 15px #fff6cc, 0 0 30px #ffcc00, 0 0 50px #ff6600;
+    box-shadow: 0 0 30px #ffae00, 0 0 60px rgba(255, 255, 150, 0.7);
+  }
+}
 .h1Sobrenos {
   font-family: "Merriweather", serif;
   text-align: center;
@@ -185,30 +283,38 @@ header {
 }
 header .navbar {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 0rem;
-  max-width: 75rem;
-  margin: auto;
+  width: 100%;
   padding: 0.8rem 2rem;
-  padding: 0.8rem 2rem;
+}
+header .navbar .navlogo img {
+  height: 4.9rem;
+  width: auto;
+  display: block;
+}
+header .navbar .navlogo img:hover {
+  scale: 1.5;
+  filter: drop-shadow(0 0 20px #aea21d);
 }
 header .navbar .navbarul {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   list-style: none;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 header .navbar .navbarul li a {
   font-family: "MedievalSharp", cursive;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin: 0 2.1875rem;
   color: #f5f5dc;
   text-decoration: none;
   position: relative;
@@ -262,17 +368,17 @@ footer .footerder .logo-footer:hover {
 .caractContenedor {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  margin: 5%;
+  margin: 3%;
+  padding: 2rem;
   background-color: #1a1a1a;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  padding: 2rem;
   transition: all 0.3s ease;
   filter: grayscale(100%);
+  transition: filter 1s ease;
 }
 .caractContenedor:hover {
   filter: none;
@@ -285,25 +391,24 @@ footer .footerder .logo-footer:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: contain;
-  transition: transform 0.3s ease, filter 0.3s ease;
 }
 .caractContenedor .caractImg img {
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   border-radius: 1rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: cover;
+  transition: transform 1s ease;
 }
 .caractContenedor .caractImg img:hover {
-  filter: none;
-  transform: scale(1.4);
+  transform: scale(1.2);
 }
 .caractContenedor .caractElementosDiv {
   flex: 1;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 1.8vw, 1.8rem);
   color: #dfdddd;
   font-weight: 700;
+  line-height: 1.4;
 }
 .caractContenedor .caractElementosDiv ul {
   padding-left: 1.5rem;
@@ -314,17 +419,16 @@ footer .footerder .logo-footer:hover {
 
 .relatosContainer {
   display: grid;
-  grid-template-columns: 5fr;
   gap: 1.25rem;
   width: 100%;
 }
-.relatosContainer .relatoImpar, .relatosContainer .relatoPar {
+.relatosContainer .relatoImpar {
   margin: 1.25rem auto;
-  max-width: 75rem;
+  max-width: 70%;
   margin-bottom: 3rem;
 }
-.relatosContainer .relatoImpar .relatoCard, .relatosContainer .relatoPar .relatoCard {
-  background-color: #5c56cc;
+.relatosContainer .relatoImpar .relatoCard {
+  background: linear-gradient(135deg, #28885b, #3d9e25, #4c7460, #fff);
   border-radius: 0.625rem;
   box-shadow: 0.625rem 0.625rem 0.625rem rgba(34, 34, 34, 0.8156862745);
   display: flex;
@@ -334,48 +438,118 @@ footer .footerder .logo-footer:hover {
   width: 100%;
   box-sizing: border-box;
   filter: grayscale(100%);
-  transition: all 0.4s ease;
+  transition: all 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
   transform-origin: center;
   margin: auto;
+  position: relative;
+  overflow: hidden;
+  scale: 0.8;
 }
-.relatosContainer .relatoImpar .relatoCard:hover, .relatosContainer .relatoPar .relatoCard:hover {
+.relatosContainer .relatoImpar .relatoCard:hover {
   filter: none;
-  transform: scale(1.25);
+  transform: scale(1.7);
+  box-shadow: 0 0 25px #ffd700, 0 0 50px #ff8c00;
 }
-.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido, .relatosContainer .relatoPar .relatoCard .relatoCardcontenido {
+.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido {
   flex: 1;
-  filter: blur(5px);
+  color: #000;
   font-family: "Montserrat", sans-serif;
+  font-size: large;
+  font-weight: 700;
 }
-.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido:hover, .relatosContainer .relatoPar .relatoCard .relatoCardcontenido:hover {
-  filter: none;
-}
-.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido .relatoCardTitulo, .relatosContainer .relatoPar .relatoCard .relatoCardcontenido .relatoCardTitulo {
+.relatosContainer .relatoImpar .relatoCard .relatoCardcontenido .relatoCardTitulo {
   font-family: "MedievalSharp", cursive;
   font-size: 3rem;
   text-align: center;
+  color: #ffd700;
+  animation: textoBrillante 3s ease-in-out infinite alternate;
 }
-.relatosContainer .relatoImpar .relatoCard .relatoCardImg, .relatosContainer .relatoPar .relatoCard .relatoCardImg {
+.relatosContainer .relatoImpar .relatoCard .relatoCardImg {
   flex-shrink: 0;
   max-width: 12.5rem;
   max-height: 25rem;
-  overflow: hidden;
 }
-.relatosContainer .relatoImpar .relatoCard .relatoCardImg img, .relatosContainer .relatoPar .relatoCard .relatoCardImg img {
+.relatosContainer .relatoImpar .relatoCard .relatoCardImg img {
   width: 100%;
   border-radius: 1.25rem;
+  transition: transform 0.6s ease, box-shadow 0.4s ease;
+  box-shadow: 0.625rem 0.625rem 0.625rem rgba(34, 34, 34, 0.8156862745);
 }
-
-.relatoPar .relatoCard {
+.relatosContainer .relatoImpar .relatoCard .relatoCardImg img:hover {
+  transform: scale(1.1);
+}
+.relatosContainer .relatoPar {
+  margin: 1.25rem auto;
+  max-width: 70%;
+  margin-bottom: 3rem;
+}
+.relatosContainer .relatoPar .relatoCard {
+  background: linear-gradient(135deg, #28885b, #3d9e25, #4c7460, #fff);
+  border-radius: 0.625rem;
+  box-shadow: 0.625rem 0.625rem 0.625rem rgba(34, 34, 34, 0.8156862745);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+  filter: grayscale(100%);
+  transition: all 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  transform-origin: center;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  scale: 0.8;
   flex-direction: row-reverse;
 }
+.relatosContainer .relatoPar .relatoCard:hover {
+  filter: none;
+  transform: scale(1.7);
+  box-shadow: 0 0 25px #ff0000, 0 0 50px #ff8c00;
+}
+.relatosContainer .relatoPar .relatoCard .relatoCardcontenido {
+  flex: 1;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: large;
+  font-weight: 700;
+}
+.relatosContainer .relatoPar .relatoCard .relatoCardcontenido .relatoCardTitulo {
+  font-family: "MedievalSharp", cursive;
+  font-size: 3rem;
+  text-align: center;
+  color: #ffd700;
+  animation: textoBrillante 3s ease-in-out infinite alternate;
+}
+.relatosContainer .relatoPar .relatoCard .relatoCardImg {
+  flex-shrink: 0;
+  max-width: 12.5rem;
+  max-height: 25rem;
+}
+.relatosContainer .relatoPar .relatoCard .relatoCardImg img {
+  width: 100%;
+  border-radius: 1.25rem;
+  transition: transform 0.6s ease, box-shadow 0.4s ease;
+  box-shadow: 0.625rem 0.625rem 0.625rem rgba(34, 34, 34, 0.8156862745);
+}
+.relatosContainer .relatoPar .relatoCard .relatoCardImg img:hover {
+  transform: scale(1.1);
+}
 
+@keyframes textoBrillante {
+  from {
+    text-shadow: 0 0 10px #000000, 0 0 20px #413d26, 0 0 40px #6d3713;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ffd700, 0 0 80px #ff6600;
+  }
+}
 .personajesDivContenedor {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
-  margin: 2rem auto;
+  margin: 5rem auto;
   max-width: 1100px;
   padding: 2rem;
   background: #1a1a1a;
@@ -383,10 +557,12 @@ footer .footerder .logo-footer:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   color: #f5f5f5;
   font-family: "Georgia", serif;
-  filter: blur(10px);
+  transition: transform 0.4s, background 0.6s ease;
 }
 .personajesDivContenedor:hover {
-  filter: none;
+  transform: scale(1.3);
+  background: radial-gradient(circle, #3b2a1a, #1a1a1a);
+  box-shadow: 0 0 25px #d4af37, 0 0 50px rgba(212, 175, 55, 0.4);
 }
 .personajesDivContenedor .personajesDivTexto p {
   font-size: 1.5rem;
@@ -401,15 +577,16 @@ footer .footerder .logo-footer:hover {
 .personajesDivContenedor .personajesDivImg img {
   width: 100%;
   border-radius: 1rem;
-  transition: transform 0.4s; /** maneja la duracion del efecto **/
+  transition: transform 0.4s;
 }
 .personajesDivContenedor .personajesDivImg img:hover {
-  transform: scale(1.1); /** efecto de zoom**/
+  transform: scale(1.1);
 }
 
 .div501 {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   background-color: #f9f5f0;
   padding: 2rem;
@@ -417,26 +594,34 @@ footer .footerder .logo-footer:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   max-width: 75rem;
   margin: 2rem auto;
+  /* 🔹 Texto - ocupa 50% */
 }
 .div501 .div501Texto {
   flex: 1;
+  width: 50%;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   color: #333;
 }
 .div501 .div501Img {
   flex: 1;
+  width: 50%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 .div501 .div501Img img {
-  max-width: 100%;
+  width: 100%;
+  height: 15.625rem;
+  object-fit: cover;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .div501 .div501Img img:hover {
-  transform: scale(1.05);
+  transform: scale(1.15);
   box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 
@@ -468,17 +653,59 @@ footer .footerder .logo-footer:hover {
 }
 
 /* media */
-/**-------------------------------------------- configuraciones index ------------------**/
+/**------ configuraciones navbar ------------------**/
 @media (max-width: 1024px) {
+  header .navbar .navbarul {
+    margin-top: 2rem;
+  }
+}
+/**-------------------------------------- configuraciones Index ------------------**/
+@media (max-width: 1024px) {
+  .divIndex {
+    height: 120vh;
+  }
+  .divIndex img {
+    object-fit: cover;
+    height: 100%;
+  }
   .divIndex .divContenido {
-    margin-top: 1rem;
+    width: 85%;
   }
   .divIndex .divContenido h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+    font-size: 2.5rem;
+    padding: 0.8rem;
   }
-  .divIndex .divTextoVideo p {
+  .divIndex .divContenido .divTextoVideo p {
     font-size: 1.5rem;
+  }
+  .divIndex .divContenido .divTextoVideo .video-container iframe {
+    padding: 80px;
+  }
+}
+/**-------------------------------------- configuraciones relatos ------------------**/
+@media (max-width: 1024px) {
+  .relatosContainer .relatoImpar .relatoCard,
+  .relatosContainer .relatoPar .relatoCard {
+    scale: 0.9;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard:hover,
+  .relatosContainer .relatoPar .relatoCard:hover {
+    transform: scale(1.5);
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido {
+    font-size: 1rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido .relatoCardTitulo,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido .relatoCardTitulo {
+    font-size: 2.5rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardImg,
+  .relatosContainer .relatoPar .relatoCard .relatoCardImg {
+    max-width: 10rem;
+    max-height: 20rem;
   }
 }
 /**-------------------------------------- configuraciones caracteristicas ------------------**/
@@ -497,19 +724,157 @@ footer .footerder .logo-footer:hover {
     font-size: 1.5rem;
   }
 }
-/**----------------------------------- configuraciones relatos ------------------**/
-@media (min-width: 1024px) {
-  .relatosContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+/**-------------------------------------- configuraciones personajes ------------------**/
+@media (max-width: 1024px) {
+  .personajesDivContenedor {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin: 3rem auto;
+  }
+  .personajesDivContenedor .personajesDivTexto h2 {
+    font-size: 1.8rem;
+  }
+  .personajesDivContenedor .personajesDivTexto p {
+    font-size: 1.3rem;
+  }
+  .personajesDivContenedor .personajesDivImg img {
+    max-width: 90%;
+  }
+  .personajesH1 {
+    font-size: 2.2rem;
+    padding: 1rem 1.5rem;
+  }
+}
+/**-------------------------------------- configuraciones personajes ------------------**/
+@media (max-width: 1024px) {
+  .div501 {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+  .div501 .div501Texto {
+    width: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .div501 .div501Img {
+    flex-direction: row;
     width: 100%;
   }
-  .relatoImpar, .relatoPar {
-    grid-column: 1/span 2;
+  .div501 .div501Img img {
+    width: 50%;
+    height: auto;
   }
-  .relatoPar {
-    grid-column: 2/span 2;
+}
+/**------ configuraciones navbar ------------------**/
+@media (max-width: 992px) {
+  header .navbar .navbarul {
+    gap: 0;
+    margin-top: 1rem;
+  }
+  header .navbar .navbarul li {
+    text-align: center;
+  }
+  header .navbar .navbarul li a {
+    margin: 1.5rem;
+    display: block;
+    text-align: center;
+  }
+}
+/**-------------------------------------------- configuraciones index ------------------**/
+@media (max-width: 992px) {
+  .divIndex {
+    height: 100vh;
+  }
+  .divIndex .divContenido h1 {
+    font-size: 2.5rem;
+  }
+  .divIndex .divContenido .divTextoVideo p {
+    font-size: 2rem;
+  }
+}
+/**------------------------------- configuraciones Relatos ------------------**/
+@media (max-width: 992px) {
+  .relatosContainer .relatoImpar .relatoCard,
+  .relatosContainer .relatoPar .relatoCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    scale: 1;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard:hover,
+  .relatosContainer .relatoPar .relatoCard:hover {
+    transform: scale(1.25);
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido {
+    font-size: 0.95rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido .relatoCardTitulo,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido .relatoCardTitulo {
+    font-size: 2.2rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardImg,
+  .relatosContainer .relatoPar .relatoCard .relatoCardImg {
+    max-width: 9rem;
+    max-height: 15rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardImg img,
+  .relatosContainer .relatoPar .relatoCard .relatoCardImg img {
+    width: 100%;
+  }
+}
+/**-------------------------------------- configuraciones personajes ------------------**/
+@media (max-width: 992px) {
+  .personajesDivContenedor {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    margin: 3rem auto;
+  }
+  .personajesDivContenedor .personajesDivTexto h2 {
+    font-size: 1.6rem;
+  }
+  .personajesDivContenedor .personajesDivTexto p {
+    font-size: 1.2rem;
+  }
+  .personajesDivContenedor .personajesDivImg img {
+    max-width: 85%;
+  }
+  .personajesH1 {
+    font-size: 2rem;
+    padding: 0.9rem 1.2rem;
+  }
+}
+/**------------------------------- configuraciones sobrenos ------------------**/
+@media (max-width: 992px) {
+  .div501 {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .div501 .div501Texto,
+  .div501 .div501Img {
+    width: 100%;
+  }
+  .div501 .div501Img {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .div501 .div501Img img {
+    width: 48%;
+    height: 200px;
+  }
+  .divMapSobrenos iframe {
+    width: 90%;
+    height: auto;
   }
 }
 /**---------------------------------- configuraciones Personajes ------------------**/
@@ -525,15 +890,44 @@ footer .footerder .logo-footer:hover {
     font-size: 1rem;
   }
 }
+/**------ configuraciones navbar ------------------**/
+@media (max-width: 768px) {
+  header .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 1rem;
+  }
+  header .navbar .navlogo img {
+    height: 5rem;
+  }
+  header .navbar .navbarul {
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.3rem;
+  }
+  header .navbar .navbarul li a {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+}
+/**-------------------- configuraciones footer ------------------**/
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: row;
+    text-align: center;
+    gap: 0.3rem;
+  }
+  .footerder .logo-footer {
+    max-height: 50px;
+  }
+}
 /**-------------------- configuraciones index ------------------**/
 @media (max-width: 768px) {
-  .divTextoVideo {
-    flex-direction: column;
-  }
-  .divContenido h1 {
+  .divIndex .divContenido h1 {
     font-size: 1.5rem;
   }
-  .divContenido p {
+  .divIndex .divContenido .divTextoVideo p {
     font-size: 1.2rem;
     margin-bottom: 15%;
   }
@@ -556,64 +950,193 @@ footer .footerder .logo-footer:hover {
 }
 /**---------------------------- configuraciones relatos ------------------**/
 @media (max-width: 768px) {
-  .relatosTitulo {
-    font-size: 3rem;
-    max-width: 85%;
+  .relatosContainer {
+    gap: 2rem;
   }
-  .relatoCard {
+  .relatosContainer .relatoImpar,
+  .relatosContainer .relatoPar {
+    width: 90%;
+  }
+  .relatosContainer .relatoImpar .relatoCard,
+  .relatosContainer .relatoPar .relatoCard {
     flex-direction: column;
-    text-align: center;
+    padding: 0.75rem;
+    scale: 1;
+    gap: 0.5rem;
   }
-  .relatoPar .relatoCard {
-    flex-direction: column;
+  .relatosContainer .relatoImpar .relatoCard:hover,
+  .relatosContainer .relatoPar .relatoCard:hover {
+    transform: scale(1.3);
   }
-  .relatoCardImg {
-    max-width: 100%;
-    margin-top: 0.9375rem;
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido {
+    font-size: 0.9rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido .relatoCardTitulo,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido .relatoCardTitulo {
+    font-size: 2rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardImg,
+  .relatosContainer .relatoPar .relatoCard .relatoCardImg {
+    max-width: 8rem;
+    max-height: 13rem;
   }
 }
-/**------ configuraciones navbar ------------------**/
+/**-------------------------------------- configuraciones personajes ------------------**/
 @media (max-width: 768px) {
-  .navbarul {
-    flex-direction: column;
-    align-items: center;
+  .personajesDivContenedor {
+    max-width: 90%;
+    grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 1rem;
+    margin: 2.5rem auto;
+  }
+  .personajesDivContenedor:hover {
+    transform: scale(1.03);
+  }
+  .personajesDivContenedor .personajesDivTexto h2 {
+    font-size: 1.4rem;
+  }
+  .personajesDivContenedor .personajesDivTexto p {
+    font-size: 1.1rem;
+  }
+  .personajesDivContenedor .personajesDivImg img {
+    max-width: 80%;
+  }
+  .personajesH1 {
+    font-size: 1.8rem;
+    padding: 0.8rem 1rem;
+  }
+}
+/**-------------------- configuraciones sobrenos ------------------**/
+@media (max-width: 768px) and (max-width: 768px) {
+  .h1Sobrenos {
+    width: 80%;
+    font-size: 3rem;
+  }
+  .div501 {
+    width: 90%;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .div501 .div501Texto {
+    width: 100%;
+    font-size: 1.25rem;
+    text-align: justify;
+  }
+  .div501 .div501Img {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .div501 .div501Img img {
+    width: 48%;
+    height: 10rem;
+  }
+  .divMapSobrenos iframe {
+    width: 90%;
+    height: auto;
   }
 }
 /**-------------------- configuraciones footer ------------------**/
-@media (max-width: 768px) {
-  .footer {
+@media (max-width: 480px) {
+  footer {
     flex-direction: column;
     text-align: center;
-    gap: 0.3rem;
+    gap: 0.5rem;
   }
-  .footerder .logo-footer {
-    max-height: 50px;
+  footer .footerizq {
+    margin: 0;
   }
-}
-/**---------------------------------------- configuraciones sobrenos ------------------**/
-@media (max-width: 600px) {
-  .contactoContainer {
-    padding: 1.5rem;
-  }
-  .contactoTitulo {
-    font-size: 1.8rem;
-  }
-  .contactoDescripcion {
+  footer .footerizq p {
     font-size: 1rem;
+    margin: 0.3rem 0;
+  }
+  footer .footerder .logo-footer {
+    max-height: 3rem;
+    margin-top: 0.5rem;
   }
 }
 /**--------------------- configuraciones index ------------------**/
 @media (max-width: 480px) {
-  .divContenido h1 {
-    font-size: 1.5rem;
+  .divIndex .divContenido {
+    margin-top: 1rem;
   }
-  .divContenido h1::first-letter {
-    font-size: 2.8rem;
+  .divIndex .divContenido h1 {
+    padding: 0;
+    font-size: 1.3rem;
+    margin: 0 auto;
+  }
+  .divIndex .divContenido h1::first-letter {
+    font-size: 2rem;
     margin-right: 0.5rem;
   }
-  .divContenido p {
-    font-size: 0.9rem;
+  .divIndex .divContenido .divTextoVideo p {
+    font-size: 0.7rem;
+  }
+  .divIndex .divContenido .divTextoVideo .video-container iframe {
+    width: 100%;
+    height: 100%;
+    padding: 0.3rem;
+  }
+}
+/**------------------------------- configuraciones relatos ------------------**/
+@media (max-width: 480px) {
+  .relatosTitulo {
+    font-size: 2rem;
+  }
+  .relatosContainer {
+    gap: 0.75rem;
+  }
+  .relatosContainer .relatoImpar,
+  .relatosContainer .relatoPar {
+    width: 95%;
+  }
+  .relatosContainer .relatoImpar .relatoCard,
+  .relatosContainer .relatoPar .relatoCard {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    scale: 1;
+    padding: 0.75rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard:hover, .relatosContainer .relatoImpar .relatoCardactive,
+  .relatosContainer .relatoPar .relatoCard:hover,
+  .relatosContainer .relatoPar .relatoCardactive {
+    transform: scale(1.3) !important;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido .relatoCardTitulo,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido .relatoCardTitulo {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido h3,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido h3 {
+    font-size: 1rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardcontenido p,
+  .relatosContainer .relatoPar .relatoCard .relatoCardcontenido p {
+    font-size: 0.75rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardImg,
+  .relatosContainer .relatoPar .relatoCard .relatoCardImg {
+    max-width: 8rem;
+    max-height: 12rem;
+    margin-top: 0.5rem;
+  }
+  .relatosContainer .relatoImpar .relatoCard .relatoCardImg img,
+  .relatosContainer .relatoPar .relatoCard .relatoCardImg img {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: auto;
   }
 }
 /**------------------------------- configuraciones caracteristicas ------------------**/
@@ -637,6 +1160,62 @@ footer .footerder .logo-footer:hover {
   }
   .caractElementosDiv ul li p {
     font-size: 0.9rem;
+  }
+}
+/**-------------------------------------- configuraciones personajes ------------------**/
+@media (max-width: 480px) {
+  .personajesDivContenedor {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+  .personajesDivContenedor:hover {
+    transform: scale(1.05);
+  }
+  .personajesDivContenedor .personajesDivTexto h2 {
+    font-size: 1.2rem;
+  }
+  .personajesDivContenedor .personajesDivTexto p {
+    font-size: 1rem;
+  }
+  .personajesDivContenedor .personajesDivImg img {
+    max-width: 100%;
+  }
+  .personajesH1 {
+    font-size: 1.4rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+/**------------------------------- configuraciones Sobrenos ------------------**/
+@media (max-width: 480px) {
+  .bodySobrenos .h1Sobrenos {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+  .bodySobrenos .div501 {
+    width: 90%;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .bodySobrenos .div501 .div501Texto {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  .bodySobrenos .div501 .div501Img {
+    flex-direction: column;
+  }
+  .bodySobrenos .div501 .div501Img img {
+    width: 100%;
+    height: 12rem;
+  }
+  .bodySobrenos .divMapSobrenos h2 {
+    width: 50%;
+  }
+  .bodySobrenos .divMapSobrenos iframe {
+    width: 90%;
+    height: 250px;
   }
 }
 

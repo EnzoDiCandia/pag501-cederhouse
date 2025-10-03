@@ -1,0 +1,141 @@
+.relatosContainer {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+
+
+  .relatoImpar {
+    @include cardrelato(1.25rem auto, 70%, 3rem);
+
+    .relatoCard {
+      background: linear-gradient(135deg, #28885b, #3d9e25, #4c7460, #fff);
+      border-radius: 0.625rem;
+      box-shadow: 0.625rem 0.625rem 0.625rem #222222d0;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      width: 100%;
+      box-sizing: border-box;
+      filter: grayscale(100%);
+      transition: all 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+      transform-origin: center;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      scale: 0.8;
+
+      &:hover {
+        filter: none;
+        transform: scale(1.7);
+        box-shadow: 0 0 25px #ffd700, 0 0 50px #ff8c00;
+      }
+
+      .relatoCardcontenido {
+        flex: 1;
+        color: #000;
+        font-family: "Montserrat", sans-serif;
+        font-size: large;
+        font-weight: 700;
+
+        .relatoCardTitulo {
+          font-family: "MedievalSharp", cursive;
+          font-size: 3rem;
+          text-align: center;
+          color: #ffd700;
+          animation: textoBrillante 3s ease-in-out infinite alternate;
+        }
+      }
+
+      .relatoCardImg {
+        flex-shrink: 0;
+        max-width: 12.5rem;
+        max-height: 25rem;
+
+        img {
+          width: 100%;
+          border-radius: 1.25rem;
+          transition: transform 0.6s ease, box-shadow 0.4s ease;
+          box-shadow: 0.625rem 0.625rem 0.625rem #222222d0;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  .relatoPar {
+    @include cardrelato(1.25rem auto, 70%, 3rem);
+
+    .relatoCard {
+      background: linear-gradient(135deg, #28885b, #3d9e25, #4c7460, #fff);
+      border-radius: 0.625rem;
+      box-shadow: 0.625rem 0.625rem 0.625rem #222222d0;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      width: 100%;
+      box-sizing: border-box;
+      filter: grayscale(100%);
+      transition: all 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+      transform-origin: center;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      scale: 0.8;
+      flex-direction: row-reverse;
+
+      &:hover {
+        filter: none;
+        transform: scale(1.7);
+        box-shadow: 0 0 25px #ff0000, 0 0 50px #ff8c00;
+      }
+
+      .relatoCardcontenido {
+        flex: 1;
+        color: #000;
+        font-family: "Montserrat", sans-serif;
+        font-size: large;
+        font-weight: 700;
+
+        .relatoCardTitulo {
+          font-family: "MedievalSharp", cursive;
+          font-size: 3rem;
+          text-align: center;
+          color: #ffd700;
+          animation: textoBrillante 3s ease-in-out infinite alternate;
+        }
+      }
+
+      .relatoCardImg {
+        flex-shrink: 0;
+        max-width: 12.5rem;
+        max-height: 25rem;
+
+        img {
+          width: 100%;
+          border-radius: 1.25rem;
+          transition: transform 0.6s ease, box-shadow 0.4s ease;
+          box-shadow: 0.625rem 0.625rem 0.625rem #222222d0;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes textoBrillante {
+  from {
+    text-shadow: 0 0 10px #000000, 0 0 20px #413d26, 0 0 40px #6d3713;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ffd700, 0 0 80px #ff6600;
+  }
+}

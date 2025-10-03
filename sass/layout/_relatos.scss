@@ -1,0 +1,46 @@
+.relatosTitulo {
+  font-family: "MedievalSharp", cursive;
+  max-width: 70%;
+  font-size: 3rem;
+  margin: 2.5rem auto;
+  text-align: center;
+  background: linear-gradient(135deg, #163a1a, #235b2a, #2f4f2f);
+  border-radius: 1.875rem;
+  padding: 1.25rem 2rem;
+  color: #eaffd0;
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.3);
+  letter-spacing: 2px;
+  transition: transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fondo 3s ease-in-out infinite;
+animation: brillofondo 2s ease-in-out infinite alternate,
+fondo 6s ease-in-out infinite;
+  }
+
+/* 💫 Brillo del texto */
+@keyframes brillofondo {
+  0% {
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
+  }
+  50% {
+    text-shadow: 0 0 20px #b5ffa3, 0 0 40px #66ffbb, 0 0 60px #b2f889;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
+  }
+}
+
+/* 🌈 Movimiento del fondo (efecto mágico suave) */
+@keyframes fondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

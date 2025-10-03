@@ -1,0 +1,196 @@
+/**------ configuraciones navbar ------------------**/
+
+@media (max-width: 768px) {
+    header {
+        .navbar {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.5rem 1rem;
+
+            .navlogo img {
+                height: 5rem;
+            }
+
+            .navbarul {
+                flex-direction: column;
+                gap: 0.3rem;
+                margin-top: 0.3rem;
+
+                li a {
+                    font-size: 1.5rem;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+/**-------------------- configuraciones footer ------------------**/
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: row;
+        text-align: center;
+        gap: 0.3rem;
+    }
+
+    .footerder .logo-footer {
+        max-height: 50px;
+    }
+}
+
+
+/**-------------------- configuraciones index ------------------**/
+
+@media (max-width: 768px) {
+    .divIndex{
+        .divContenido h1 {
+            font-size: 1.5rem;
+        }
+        .divContenido{
+            .divTextoVideo {
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 15%;
+                }
+            }
+        }
+    }
+}
+
+
+/**------------------------------------ configuraciones caracteristicas ------------------**/
+
+
+@media (max-width: 768px) {
+    .caractTituloDiv {
+        max-width: 80%;
+        padding: 15px;
+    }
+
+    .caractTituloDiv h1 {
+        font-size: 1.6rem;
+    }
+
+    .caractSubtDiv h2 {
+        font-size: 1.5rem;
+    }
+
+    .caractElementosDiv ul li p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/**---------------------------- configuraciones relatos ------------------**/
+
+
+
+@media (max-width: 768px) {
+  .relatosContainer {
+    gap: 2rem;
+    .relatoImpar,
+    .relatoPar {
+      width: 90%;
+      .relatoCard {
+        flex-direction: column;
+        padding: 0.75rem;
+        scale: 1;
+        gap: 0.5rem;
+        &:hover{
+            transform: scale(1.3);
+        }
+        .relatoCardcontenido {
+          font-size: 0.9rem;
+          .relatoCardTitulo {
+            font-size: 2rem;
+          }
+        }
+        .relatoCardImg {
+          max-width: 8rem;
+          max-height: 13rem;
+        }
+      }
+    }
+  }
+}
+
+   /**-------------------------------------- configuraciones personajes ------------------**/
+
+
+@media (max-width: 768px) {
+  .personajesDivContenedor {
+    max-width: 90%;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 2.5rem auto;
+        &:hover {
+        transform: scale(1.03);
+    }
+
+    .personajesDivTexto {
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    .personajesDivImg {
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+
+  .personajesH1 {
+    font-size: 1.8rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+
+
+/**-------------------- configuraciones sobrenos ------------------**/
+
+
+@media (max-width: 768px) {
+    @media (max-width: 768px) {
+        .h1Sobrenos {
+            width: 80%;
+            font-size: 3rem;
+        }
+
+        .div501 {
+            width: 90%;
+            flex-direction: column;
+            padding: 1.5rem;
+
+            .div501Texto {
+                width: 100%;
+                font-size: 1.25rem;
+                text-align: justify;
+            }
+
+            .div501Img {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+
+                img {
+                    width: 48%;
+                    height: 10rem;
+                }
+            }
+        }
+
+        .divMapSobrenos iframe {
+            width: 90%;
+            height: auto;
+        }
+    }
+}
