@@ -15,18 +15,20 @@
   position: relative;
   overflow: hidden;
   animation: fondo 3s ease-in-out infinite;
-animation: brillofondo 2s ease-in-out infinite alternate,
-fondo 6s ease-in-out infinite;
-  }
+  animation: brillofondo 2s ease-in-out infinite alternate,
+    fondo 6s ease-in-out infinite;
+}
 
 /* 💫 Brillo del texto */
 @keyframes brillofondo {
   0% {
     text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
   }
+
   50% {
     text-shadow: 0 0 20px #b5ffa3, 0 0 40px #66ffbb, 0 0 60px #b2f889;
   }
+
   100% {
     text-shadow: 0 0 10px #00ff88, 0 0 20px #33ff99, 0 0 40px #b5ffa3;
   }
@@ -37,9 +39,11 @@ fondo 6s ease-in-out infinite;
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }

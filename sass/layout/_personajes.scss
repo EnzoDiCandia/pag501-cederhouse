@@ -11,7 +11,7 @@
   box-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
   transition: transform 0.3s ease;
   animation: glowPulse 1.0s ease-in-out infinite alternate;
-  }
+}
 
 
 /* 🔮 Animación del resplandor */
@@ -20,10 +20,12 @@
     text-shadow: 0 0 10px #ffae00, 0 0 20px #ff6600, 0 0 30px #ff3300;
     box-shadow: 0 0 25px #ff6600, 0 0 40px rgba(255, 255, 200, 0.5);
   }
+
   50% {
     text-shadow: 0 0 20px #fff, 0 0 40px #ffd700, 0 0 60px #ff6600;
     box-shadow: 0 0 40px #ffd700, 0 0 70px rgba(255, 255, 200, 0.8);
   }
+
   100% {
     text-shadow: 0 0 15px #fff6cc, 0 0 30px #ffcc00, 0 0 50px #ff6600;
     box-shadow: 0 0 30px #ffae00, 0 0 60px rgba(255, 255, 150, 0.7);

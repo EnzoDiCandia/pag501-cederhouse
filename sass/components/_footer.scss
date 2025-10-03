@@ -19,6 +19,7 @@ footer {
         .logo-footer {
             max-height: 6rem;
             transition: transform 0.3s ease;
+
             &:hover {
                 transform: scale(1.2) rotate(-3deg);
                 /* agranda y gira el logo */

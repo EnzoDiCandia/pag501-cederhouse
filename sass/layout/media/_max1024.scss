@@ -1,58 +1,65 @@
 /**------ configuraciones navbar ------------------**/
 
 @media (max-width: 1024px) {
-    header {
-        .navbar {
-            .navbarul {
-                margin-top: 2rem;
-            }
-        }
+  header {
+    .navbar {
+      .navbarul {
+        margin-top: 2rem;
+      }
     }
+  }
 }
 
-    /**-------------------------------------- configuraciones Index ------------------**/
+/**-------------------------------------- configuraciones Index ------------------**/
 @media (max-width: 1024px) {
-    .divIndex {
-        height: 120vh;
+  .divIndex {
+    height: 120vh;
 
-        img {
-            object-fit: cover;
-            height: 100%;
-        }
-        .divContenido {
-            width: 85%;
-            h1 {
-                font-size: 2.5rem;
-                padding: 0.8rem;
-            }
-            .divTextoVideo {
-                p {
-                    font-size: 1.5rem;
-                }
-                .video-container {
-                    iframe {
-                        padding: 80px;
-                    }
-                }
-            }
-        }
+    img {
+      object-fit: cover;
+      height: 100%;
     }
+
+    .divContenido {
+      width: 85%;
+
+      h1 {
+        font-size: 2.5rem;
+        padding: 0.8rem;
+      }
+
+      .divTextoVideo {
+        p {
+          font-size: 1.5rem;
+        }
+
+        .video-container {
+          iframe {
+            padding: 80px;
+          }
+        }
+      }
+    }
+  }
 }
 
 
-    /**-------------------------------------- configuraciones relatos ------------------**/
+/**-------------------------------------- configuraciones relatos ------------------**/
 
 @media (max-width: 1024px) {
   .relatosContainer {
+
     .relatoImpar,
     .relatoPar {
       .relatoCard {
         scale: 0.9;
         padding: 1rem;
         gap: 1rem;
-        &:hover{
-            transform: scale(1.5);
+
+        &:hover {
+          transform: scale(1.5);
         }
+
         .relatoCardcontenido {
           font-size: 1rem;
 
@@ -60,6 +67,7 @@
             font-size: 2.5rem;
           }
         }
+
         .relatoCardImg {
           max-width: 10rem;
           max-height: 20rem;
@@ -72,28 +80,28 @@
 
 
 
-    /**-------------------------------------- configuraciones caracteristicas ------------------**/
-    @media (max-width: 1024px) {
-        .caractTituloDiv {
-            max-width: 80%;
-            padding: 15px;
-        }
+/**-------------------------------------- configuraciones caracteristicas ------------------**/
+@media (max-width: 1024px) {
+  .caractTituloDiv {
+    max-width: 80%;
+    padding: 15px;
+  }
 
-        .caractTituloDiv h1 {
-            font-size: 1.8rem;
-        }
+  .caractTituloDiv h1 {
+    font-size: 1.8rem;
+  }
 
-        .caractSubtDiv h2 {
-            font-size: 1.7rem;
-        }
+  .caractSubtDiv h2 {
+    font-size: 1.7rem;
+  }
 
-        .caractElementosDiv ul li p {
-            font-size: 1.5rem;
-        }
-    }
+  .caractElementosDiv ul li p {
+    font-size: 1.5rem;
+  }
+}
 
 
-        /**-------------------------------------- configuraciones personajes ------------------**/
+/**-------------------------------------- configuraciones personajes ------------------**/
 
 
 @media (max-width: 1024px) {
@@ -107,6 +115,7 @@
       h2 {
         font-size: 1.8rem;
       }
+
       p {
         font-size: 1.3rem;
       }
@@ -142,8 +151,9 @@
     }
 
     .div501Img {
-        flex-direction: row;
-        width: 100%;
+      flex-direction: row;
+      width: 100%;
+
       img {
         width: 50%;
         height: auto;

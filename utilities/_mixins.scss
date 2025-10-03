@@ -1,4 +1,4 @@
-@mixin flex($wrap,$direction,$justify,$item,$gap){
+@mixin flex($wrap, $direction, $justify, $item, $gap) {
     display: flex;
     flex-wrap: $wrap;
     flex-direction: $direction;
@@ -8,7 +8,7 @@
 }
 
 
-@mixin grid($col,$row,$justify,$align){
+@mixin grid($col, $row, $justify, $align) {
     display: grid;
     grid-template-columns: $col;
     grid-template-rows: $row;
@@ -16,14 +16,14 @@
     align-items: $align;
 }
 
-@mixin titulo($size,$margin,$align){
+@mixin titulo($size, $margin, $align) {
     font-family: "MedievalSharp", cursive;
     font-size: $size;
     margin: $margin;
     text-align: $align;
 }
 
-@mixin cardrelato($margin,$width,$margbot){
+@mixin cardrelato($margin, $width, $margbot) {
     margin: $margin;
     max-width: $width;
     margin-bottom: $margbot;
