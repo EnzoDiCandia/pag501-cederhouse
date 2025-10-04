@@ -13,27 +13,26 @@
 
 /* layout */
 
-@import "../layout/bodyindex";
-@import "../layout/caracteristicas";
-@import "../layout/relatos";
-@import "../layout/personajes";
-@import "../layout/sobrenos";
+@import "../sass/layout/bodyindex";
+@import "../sass/layout/caracteristicas";
+@import "../sass/layout/relatos";
+@import "../sass/layout/personajes";
+@import "../sass/layout/sobrenos";
 
 /* componentes */
 
-@import "../components/navbar";
-@import "../components/footer";
-@import "../components/cardcaracteristicas";
-@import "../components/cardrelatos";
-@import "../components/cardpersonajes";
-@import "../components/card501";
-@import "../components//map501";
+@import "../sass//components/navbar";
+@import "../sass//components/footer";
+@import "../sass//components/cardcaracteristicas";
+@import "../sass//components/cardrelatos";
+@import "../sass//components/cardpersonajes";
+@import "../sass//components/card501";
+@import "../sass//components//map501";
 
 
 /* media */
 
-@import "../layout/media/max1024";
-@import "../layout/media/max992";
-@import "../layout/media/max900";
-@import "../layout/media/max768";
-@import "../layout/media/max480";
+@import "../sass/layout/media/max1024";
+@import "../sass/layout/media/max992";
+@import "../sass/layout/media/max768";
+@import "../sass/layout/media/max480";
